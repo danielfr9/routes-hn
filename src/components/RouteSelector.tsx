@@ -1,11 +1,19 @@
 import { useState, useMemo, useEffect } from "react";
-import { Affix, Burger, Divider, Drawer, Select } from "@mantine/core";
+import {
+  ActionIcon,
+  Affix,
+  Burger,
+  Divider,
+  Drawer,
+  Select,
+} from "@mantine/core";
 import { KmlLayer, useGoogleMap } from "@react-google-maps/api";
 import RoutesDropdown from "./RoutesDropdown";
 import { locations, busStops } from "../assets/data";
 import { Link } from "react-router-dom";
 import { FaBusAlt, FaTaxi } from "react-icons/fa";
 import { TbBus } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
 
 type IProps = {
   routesList: Route[];
@@ -164,14 +172,20 @@ const RouteSelector = ({
         classNames={{
           root: "md:hidden",
           drawer: "bg-gradient-to-b from-[#1E3448] to-[#121F2B] text-gray-300",
-          body: "flex flex-col space-y-8",
-          closeButton:
-            "hover:bg-transparent border border-transparent hover:border-gray-600 transition-all",
+          body: "flex flex-col space-y-6",
         }}
         padding="xl"
         size="xl"
         overlayBlur={3}
+        withCloseButton={false}
       >
+        <ActionIcon
+          variant="transparent"
+          className="border p-1 w-10 h-10 self-end rounded-lg border-transparent hover:border-gray-600 transition-all"
+          onClick={() => setIsDrawerOpened(false)}
+        >
+          <IoClose className="text-gray-300 w-full h-full" />
+        </ActionIcon>
         <Link
           to="/"
           className="inline-block text-center text-gray-300 font-bold uppercase text-2xl"
