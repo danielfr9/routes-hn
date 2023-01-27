@@ -6,7 +6,7 @@ import type React from "react";
 const GoogleMapsWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <LoadScript
-      googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
+      googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
       loadingElement={
         <div className="grow flex justify-center items-center">
           <Loader variant="bars" color="teal" size="xl" />
