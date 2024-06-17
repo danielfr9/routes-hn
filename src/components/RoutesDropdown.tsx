@@ -18,7 +18,7 @@ const RoutesDropdown = ({
       offset={20}
     >
       <Menu.Target>
-        <Button className="border border-gray-400 text-md hover:bg-[#3D7B7B] hover:border-transparent hover:text-white transition-colors ease-linear">
+        <Button className="text-md bg-[#2F6060] hover:bg-[#3D7B7B] hover:text-white transition-colors ease-linear">
           Locations
         </Button>
       </Menu.Target>

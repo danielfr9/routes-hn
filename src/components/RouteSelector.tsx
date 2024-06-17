@@ -140,11 +140,13 @@ const RouteSelector = ({
               <FaBusAlt className="text-gray-300" size={24} />
             )}
             <Select
+              withCheckIcon={false}
               classNames={{
                 root: "w-full",
                 input: "bg-[#354C5A] border-none text-gray-300 w-full",
                 dropdown: "bg-[#172026] border-none",
-                item: "text-gray-300 data-[selected=true]:bg-[#3D7B7B] data-[selected=true]:data-[hovered=true]:bg-[#3D7B7B] data-[selected=true]:hover:bg-[#3D7B7B] data-[hovered=true]:bg-gray-700",
+                option:
+                  "text-gray-300 data-[combobox-active=true]:bg-[#3D7B7B] data-[combobox-active=true]:hover:bg-[#3D7B7B] data-[combobox-active=true]:hover:bg-[#3D7B7B] hover:bg-gray-700",
               }}
               placeholder="Which route?"
               value={routesList[selectedRouteIndex].code}
@@ -171,12 +173,14 @@ const RouteSelector = ({
         onClose={() => setIsDrawerOpened(false)}
         classNames={{
           root: "md:hidden",
-          drawer: "bg-gradient-to-b from-[#1E3448] to-[#121F2B] text-gray-300",
+          content: "bg-gradient-to-b from-[#1E3448] to-[#121F2B] text-gray-300",
           body: "flex flex-col space-y-6",
         }}
         padding="xl"
-        size="xl"
-        overlayBlur={3}
+        size="lg"
+        overlayProps={{
+          blur: 3,
+        }}
         withCloseButton={false}
       >
         <ActionIcon
